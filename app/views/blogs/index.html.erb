@@ -1,0 +1,19 @@
+<h1>つぶやき一覧</h1>
+
+<p><%= notice %></p>
+
+<div class="index_table clearfix">
+<table>
+  <tr>
+    <th>皆のつぶやき</th>
+  </tr>
+
+<% @blogs.each do |blog| %>
+  <tr class="table_bottom">
+    <td><%= blog.content %></td>
+    <td class="link_btn"><%= link_to "Edit", edit_blog_path(blog.id), class: "label label-success glyphicon glyphicon-edit" %></td>
+    <td class="link_btn"><%= link_to 'Delete', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？' }, class: "label label-danger glyphicon glyphicon-trash" %></td>
+    </tr>
+<% end %>
+</table>
+</div>

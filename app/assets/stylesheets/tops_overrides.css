@@ -1,0 +1,19 @@
+.navbar {
+  background-color:#f2706d;
+}
+
+.navbar-default .navbar-brand {
+color: #fff;
+}
+
+.navbar-default .navbar-nav li a {
+color: #fff;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+background-color: #fff;
+}
+
+.label{
+  color: #54524E;
+}
