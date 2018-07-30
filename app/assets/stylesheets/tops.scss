@@ -1,30 +1,25 @@
-header {
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  text-align: center;
+}
+
+.main-header {
+  padding-bottom: 15%;
   width: 100%;
-  background-color: #2c3e50;
-  height: 60px;
+  background-size: cover;
+  background-image: url("header.jpg");
+  background-attachment: fixed;
 }
 
-header ul {
+.main-header img {
+  display: block;
   margin: 0 auto;
-  list-style: none;
-}
-
-header ul a {
-  display: block;
-  padding: 15px;
-  text-decoration: none;
-  color: white;
-}
-
-header li {
-  float: left;
-  width: auto;
-}
-
-header ul:after {
-  content: "";
-  display: block;
-  clear: both;
+  width: 25%;
+  padding-top: 15%;
 }
 
 footer {
@@ -39,11 +34,3 @@ footer {
   bottom: 0;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  text-align: center;
-}
