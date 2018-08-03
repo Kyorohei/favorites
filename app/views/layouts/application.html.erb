@@ -18,13 +18,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="https://rails-tutorial-kyorohei.c9users.io/tops">Twitter clone</a>
+      <%= link_to "Twitter clone", tops_path, class: "navbar-brand" %>
     </div>
     <div id="gnavi" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="https://rails-tutorial-kyorohei.c9users.io/tops">トップ</a></li>
-        <li><a href="https://rails-tutorial-kyorohei.c9users.io/blogs">つぶやき一覧</a></li>
-        <li><a href="https://rails-tutorial-kyorohei.c9users.io/blogs/new">新規投稿</a></li>
+        <li><%= link_to "トップ", tops_path %></li>
+        <li><%= link_to "つぶやき一覧", blogs_path %></li>
+        <li><%= link_to "新規投稿", new_blog_path %></li>
       </ul>
     </div>
   </div>
