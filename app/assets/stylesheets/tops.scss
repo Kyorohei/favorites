@@ -10,15 +10,35 @@ body {
 .main-header {
   padding-bottom: 15%;
   width: 100%;
-  background-size: cover;
-  background-attachment: fixed;
+  position: relative;
 }
 
 .main-header img {
   display: block;
   margin: 0 auto;
-  width: 25%;
-  padding-top: 15%;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+}
+
+.function {
+  padding: 80px;
+  padding-bottom: 185px;
+  width: 100%;
+}
+
+.function-images {
+  width: 100%;
+  display: table;
+  margin-top: 60px;
+  table-layout: fixed;
+}
+
+.function-image {
+  display: table-cell;
+  width: 100%;
 }
 
 footer {
@@ -27,7 +47,6 @@ footer {
   padding: 20px 0 10px 0;
   color: white;
   margin: auto;
-  padding-bottom: 10px;
   font-size: 12px;
   position: absolute;
   bottom: 0;
