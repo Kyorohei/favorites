@@ -1,8 +1,13 @@
 class BlogsController < ApplicationController
 before_action :set_blog, only: [:edit, :update, :destroy]
+before_action :user_logged_in?, only: [:new, :edit, :show, :destroy]
 
   def index
     @blogs = Blog.all
+  end
+  
+  def show
+    @blog = Blog.find(params[:id])
   end
   
   def new
@@ -43,6 +48,15 @@ before_action :set_blog, only: [:edit, :update, :destroy]
   def confirm
     @blog = Blog.new(blog_params)
     render :new if @blog.invalid?
+  end
+  
+  def user_logged_in?
+    if session[:user_id]
+      @current_user = User.find_by(id: session[:user_id])
+    else
+      flash[:notice] = "利用にはログインが必要です"
+    redirect_to new_session_path
+    end
   end
 
   private
