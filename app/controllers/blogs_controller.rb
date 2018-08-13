@@ -8,6 +8,7 @@ before_action :user_logged_in?, only: [:new, :edit, :show, :destroy]
   
   def show
     @blog = Blog.find(params[:id])
+    @favorite = current_user.favorites.find_by(blog_id: @blog.id)
   end
   
   def new
@@ -20,6 +21,7 @@ before_action :user_logged_in?, only: [:new, :edit, :show, :destroy]
   
   def create
     @blog = Blog.new(blog_params)
+    @blog.user_id = current_user.id
     if @blog.save
       redirect_to blogs_path, notice: "つぶやき完了"
     else
@@ -32,7 +34,8 @@ before_action :user_logged_in?, only: [:new, :edit, :show, :destroy]
   end
   
   def update
-    @blog = Blog.find(params[:id])   
+    @blog = Blog.find(params[:id])
+    @blog.user_id = current_user.id
     if @blog.update(blog_params)
       redirect_to blogs_path, notice: "編集完了！"
     else
@@ -47,7 +50,7 @@ before_action :user_logged_in?, only: [:new, :edit, :show, :destroy]
 
   def confirm
     @blog = Blog.new(blog_params)
-    render :new if @blog.invalid?
+    @blog.user_id = current_user.id
   end
   
   def user_logged_in?
